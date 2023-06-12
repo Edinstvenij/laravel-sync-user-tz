@@ -21,6 +21,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property-read \Carbon\Carbon $deleted_at
  *
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User updateOrCreate(array $if, array $values)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereNotIn(string $field, array $values)
  */
 class User extends Model
 {
@@ -29,7 +30,7 @@ class User extends Model
     /**
      * The attributes that are mass assignable.
      *
-     * @var array<int, string>
+     * @var array<string>
      */
     protected $fillable = [
         'name',
